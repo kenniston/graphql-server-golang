@@ -1,0 +1,12 @@
+# docker stack deploy -c docker-compose.yml graphql-server
+version: '3.5'
+
+services:
+
+  graphql-server:
+    build: .
+    image: kenniston/graphql-server:0.0.1
+    ports:
+      - "3000:3000"
+    environment:
+      - GRAPH_QL_PORT=3000
