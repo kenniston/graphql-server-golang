@@ -47,6 +47,7 @@ func init() {
 	rootCmd.AddCommand(runCmd)
 
 	runCmd.Flags().StringP("server-type", "t", viper.GetString("server-type"), "Configure server type as SERVICE or KAFKA")
+	runCmd.Flags().StringP("server-port", "p", viper.GetString("server-port"), "Configure server port")
 
 	err := viper.GetViper().BindPFlags(runCmd.Flags())
 	if err != nil {
