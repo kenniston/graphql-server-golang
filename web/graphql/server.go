@@ -173,7 +173,7 @@ func (s *ServiceServer) ConfigureServer(v *viper.Viper) {
 }
 
 func (s *ServiceServer) Run() error {
-	fmt.Printf("\nGraphQL Server Running with Microservices on port %s...\n", s.Port)
+	fmt.Printf("Starting GraphQL Server with Microservices on port %s...\n", s.Port)
 	return s.app.Run(iris.Addr(fmt.Sprintf(":%s", s.Port)))
 }
 

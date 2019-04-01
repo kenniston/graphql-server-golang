@@ -21,10 +21,8 @@ API provide the endpoints to save and update data.`,
 		var builder graphql.IBuilder
 
 		if serverType == "SERVICE" {
-			log.Println("Starting server with Services...")
 			builder = new(graphql.ServiceServerBuilder)
 		} else if serverType == "KAFKA" {
-			log.Println("Starting server with Kafka...")
 			builder = new(graphql.KafkaServerBuilder)
 		} else {
 			log.Fatal("invalid server type")
@@ -38,8 +36,9 @@ API provide the endpoints to save and update data.`,
 		}
 
 		server := builder.GetResult()
+		_ = server.Run()
 
-		return server.Run()
+		return nil
 	},
 }
 
